@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <form action="/answer" method="get">
+      <input type="text" name="question">
+      <input type="submit" value="Ask!">
+    <%# <% link_to "Answer", answer_path %>
+    </form>
     <%= yield %>
   </body>
 </html>
