@@ -1,15 +1,21 @@
 class AnswerController < ApplicationController
+
   def answer
-    @answers = ["Great!", "Silly question, get dressed and go to work!", "I don't care, get dressed and go to work!"]
-    search = params[:question]
-    if search.present?
-      if search == "I am going to work"
-        @answers[0]
-      elsif search.end_with?("?")
-        @answers[1]
+    @question = params[:question]
+    @answer = coach_answer(@question)
+  end
+
+  def coach_answer(message)
+    if message.present?
+      if message == "I am going to work"
+        "Great!"
+      elsif message.include?("?")
+        "Silly question, get dressed and go to work!"
       else
-        @answers[2]
+        "I don't care, get dressed and go to work!"
       end
+    else
+      "type your question"
     end
   end
 end
