@@ -5,6 +5,7 @@ class AnswerController < ApplicationController
     @answer = coach_answer(@question)
   end
 
+  private
   def coach_answer(message)
     if message.present?
       if message == "I am going to work"
