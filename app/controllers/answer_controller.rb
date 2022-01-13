@@ -6,6 +6,7 @@ class AnswerController < ApplicationController
   end
 
   private
+
   def coach_answer(message)
     if message.present?
       if message == "I am going to work"
